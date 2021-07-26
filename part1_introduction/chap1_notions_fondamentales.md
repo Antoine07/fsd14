@@ -640,6 +640,45 @@ baz({ b: 2, a : 1}); // 1 2
 
 ### this dans le contexte de l'appel d'une fonction sur un objet <a class="anchor" id="section74"></a>
 
+
+#### Contexte this
+
+Attention on mode strict qui impose plus de cohérence de gestion d'erreurs en JS. Lisez les commentaires
+
+```js
+'use strict';
+
+function Model(){
+    this.x = 10;
+
+    return this;
+}
+
+// Le new crée un nouveau context
+let m = new Model();
+console.log(m);
+
+// pas d'instanciation => x va être attaché à l'objet Node global à l'instar de la console dans la page Web en mode non strict 
+// en mode strict le this ne sera pas défini.
+let p =  Model();
+console.log(p);
+```
+
+#### Exercice
+
+Créez une fonction constructeur CalculAverage, elle permettra de calculer la moyenne des étudiants. Utilisez les données suivantes pour effectuer ces moyennes.
+
+```js
+
+const students = [
+  { name : "Alan", notes : [11, 18, 10, 9]},
+  { name : "Sophie", notes : [10, 8, 17, 10.5]},
+  { name : "Bernard", notes : [9, 10, 11, 18]]},
+];
+```
+
+#### Notions avancées à lire si vous êtes motivés
+
 Le this d'un objet est déterminé par la manière dont vous allez appeler l'objet "contexte".
 
 L'objet sur lequel vous **appelez** la fonction détermine le this :
