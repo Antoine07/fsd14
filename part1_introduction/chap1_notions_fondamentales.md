@@ -668,6 +668,10 @@ console.log(p);
 
 Créez une fonction constructeur CalculAverage, elle permettra de calculer la moyenne des étudiants. Utilisez les données suivantes pour effectuer ces moyennes.
 
+Si vous le souhaitez, vous pouvez utiliser la notion de classe. Sinon faites une fonction comme on l'a vu en cours pour l'instant.
+
+Créez également une fonction dans votre classe ou fonction constructeur afin d'ordonner les étudiants en fonction de leur moyenne.
+
 ```js
 
 const students = [
