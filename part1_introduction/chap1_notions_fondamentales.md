@@ -408,7 +408,7 @@ tdz();
 
 ### Exercice for let (sans coder) <a class="anchor" id="section44"></a>
 
-Est ce que le code qui suit vous semble correcte ? Répondez sans exécuter le code.
+Qu'affiche le code suivant ? Répondez sans exécuter le code.
 
 ```js
 let i = 100;
@@ -452,7 +452,10 @@ STUDENTS.push("Sophie");
 console.log(STUDENTS);
 //["Alan", "Bernard", "Jean", "Sophie"]
 
-STUDENTS.pop();
+// pop sort en le retirant le dernier élément 
+// d'un tableau 
+// shift permet de sortir le premier élément.
+STUDENTS.pop(); //  Sophie
 
 console.log(STUDENTS);
 // ["Alan", "Bernard", "Jean"]
@@ -463,8 +466,9 @@ Par contre ce qui suit est impossible, l'erreur suivante sera levée :
 **TypeError: Assignment to constant variable.**
 
 ```js
+// si on définit un autre tableau 
 let newStudents = ["Alice"];
-// re-assignation impossible
+// On ne pourra pas faire de la re-assignation, c'est impossible avec une constante
 STUDENTS = newStudents;
 ```
 
@@ -476,10 +480,30 @@ STUDENTS = newStudents;
 for (const j = 0; j < 10; j++) {}
 ```
 
+Réponse : c'est impossibe car 
+```js
+j++ // est équivalent à 
+j = j + 1 ; // donc ré-assignation sur une constante donc impossible
+```
+
 2. Utilisez la syntaxe de boucle for of et const sur l'itérable STUDENTS et affichez (console.log) ses valeurs :
 
 ```js
 const STUDENTS = ["Alan", "Bernard", "Jean"];
+```
+
+
+```js
+// permet d'afficher les valeurs du tableau
+for(const student of STUDENTS){
+  console.log(student);
+}
+
+// for in permet d'afficher les indices du tableau
+for(const indice in STUDENTS){
+  console.log(STUDENTS[indice]);
+}
+
 ```
 
 
@@ -505,9 +529,9 @@ Par comparaison avec le mot clé let :
 
 ```js
 function bar() {
-  let x = 10; // portée fonction pas bloc comme let
+  let x = 10; // portée dans le bloc 
   if (true) {
-    let x = 2;  // c'est la même variable !
+    let x = 2;  // on définit un autre symbole ou variable
     console.log(x);  // 2
   }
   console.log(x);  // 10
@@ -520,6 +544,20 @@ bar(); //  2 10
 
 Une fonction en JS est un objet.
 
+
+```js
+
+function show( message ){
+
+  return message;
+}
+
+// avec les objets on peut faire ce genre d'assignation sans que le script ne marche
+// plus
+const s = show ;
+
+```
+
 ### Paramètres facultatif <a class="anchor" id="section71"></a>
 
 ```js
@@ -527,7 +565,7 @@ function add(a, sup = 1) {
   return a + sup;
 }
 
-add(10); // affiche 11
+add(10); // affiche 11, le paramètre facultatif n'est pas obligatoire, car il a été assigné à la définition de la fonction elle-même.
 
 add(10, 0); // affiche 10
 
