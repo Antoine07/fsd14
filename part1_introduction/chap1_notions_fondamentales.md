@@ -1,5 +1,7 @@
 # JS rappel des fondamentaux
 
+Ce cours est un approfondissement des notions que vous connaissez déjà
+
 ## Sommaire
 
 * [Introduction & histoire de JS](#chapter1)
