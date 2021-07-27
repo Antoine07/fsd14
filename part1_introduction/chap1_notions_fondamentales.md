@@ -920,13 +920,11 @@ numbers.reduce((acc, curr) => curr + acc, 100);
 // 155
 ```
 
-#### Exercice max <a class="anchor" id="section8102"></a>
+#### Exercice reduce   <a class="anchor" id="section8103"></a>
 
-Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
+1. Faites la moyenne des valeurs ci-dessous en utilisant de la fonction reduce.
 
-#### Exercice reduce sum impair <a class="anchor" id="section8103"></a>
-
-Faites la somme des nombres impairs en utilisant la fonction reduce des valeurs suivantes :
+2. Faites la somme des nombres impairs en utilisant la fonction reduce, un peu plus compliqué.
 
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -944,6 +942,9 @@ const phones = [
 ];
 ```
 
+#### Exercice max <a class="anchor" id="section8102"></a> Attention cet exercice n'est pas facile
+
+Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
 
 
 ### Exemple notion avancée
