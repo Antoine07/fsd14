@@ -934,6 +934,8 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 Utilisez la fonction map pour calculer le prix TTC des téléphones. Utilisez une fonction fléchée.
 
+On prendra comme tva 20%
+
 ```js
 const phones = [
   { name: "iphone XX", priceHT: 900 },
