@@ -857,7 +857,7 @@ const model2 = (x, y) => {
 
 ### Exercice arraw fonction
 
-Soit la fonction show suivante elle prend deux paramètres a et b numérique et retourne un objet du type { power2 : a**2, power3 : b**3}
+Soit la fonction show suivante elle prend deux paramètres a et b numériques et retourne un objet du type { power2 : a**2, power3 : b**3}
 
 ```js
   // arrow fonction
@@ -877,7 +877,7 @@ const powerNumber = numbers.map( number => number ** 2);
 
 #### Exercice puissance 3 <a class="anchor" id="section8101"></a>
 
-Créez une fonction flèchée pour répondre aux questions suivantes. Vous pouvez utiliser la fonction map vu en cours.
+Créez une fonction flèchée pour répondre aux questions suivantes. Utilisez les fonctions map et sort vues en cours.
 
 1. Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
 
@@ -894,7 +894,7 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 2. Ordonnez la liste des nombres par ordre croissant puis par ordre décroissant
 
-3. Trouvez une astuce pour rendre plus dynamique l'ordre des nombres à l'aide de la fonction.
+3. Trouvez une astuce pour rendre plus dynamique l'ordre des nombres à l'aide d'une fonction fléchée.
 
 
 ### Quelques fonctions JS utiles pour le traitement des données  <a class="anchor" id="chapter8"></a>
