@@ -787,7 +787,7 @@ const myFunc = function(){
 }
 ```
 
-### L'objet arguments et paramètres d'une fonction <a class="anchor" id="section76"></a>
+### L'objet arguments et paramètres d'une fonction <a class="anchor" id="section76"></a> (notions avancées)
 
 Vous n'êtes pas obligé de renseigner le nombre d'argument(s) d'une fonction en JS. La fonction possède en interne une propriété **arguments** qui récupère les paramètres de la fonction, attention arguments n'est pas un tableau :
 
@@ -854,6 +854,22 @@ const model2 = (x, y) => {
     return { x : x, y : y }
 }
 ```
+
+#### Exercice puissance 3 <a class="anchor" id="section8101"></a>
+
+Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+```
+
+*Indications : pour calculer une puissance utilisez l'opérateur suivant*
+
+```js
+// opérateur puissance
+2**3 // 8
+```
+
 
 Contrairement aux fonctions classiques, les fonctions fléchées ne re-définissent pas de this. Si vous vous référez dans une fonction fléchée au mot clé this, la fonction fléchée **récupérera le this du contexte** dans lequel elle a été définie.
 
@@ -1036,20 +1052,7 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const powerNumber = numbers.map( number => number ** 2);
 ```
 
-#### Exercice puissance 3 <a class="anchor" id="section8101"></a>
 
-Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
-
-```js
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-```
-
-*Indications : pour calculer une puissance utilisez l'opérateur suivant*
-
-```js
-// opérateur puissance
-2**3 // 8
-```
 
 - filter, il permet de filtrer des données dans un tableau en fonction d'un critère.
 
