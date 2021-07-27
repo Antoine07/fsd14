@@ -855,6 +855,17 @@ const model2 = (x, y) => {
 }
 ```
 
+### Exercice arraw fonction
+
+Soit la fonction show suivante elle prend deux paramètres a et b numérique et retourne un objet du type { power2 : a**2, power3 : b**3}
+  
+
+```js
+  // arrow fonction
+ show(2, 3) ; // { power2 : 4, power3 : 27 }
+
+ ```
+
 #### Exercice puissance 3 <a class="anchor" id="section8101"></a>
 
 Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
@@ -869,6 +880,8 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // opérateur puissance
 2**3 // 8
 ```
+
+Mettre maintenant à la puissance 3 les nombres pairs uniquement
 
 
 Contrairement aux fonctions classiques, les fonctions fléchées ne re-définissent pas de this. Si vous vous référez dans une fonction fléchée au mot clé this, la fonction fléchée **récupérera le this du contexte** dans lequel elle a été définie.
