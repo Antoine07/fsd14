@@ -858,17 +858,28 @@ const model2 = (x, y) => {
 ### Exercice arraw fonction
 
 Soit la fonction show suivante elle prend deux paramètres a et b numérique et retourne un objet du type { power2 : a**2, power3 : b**3}
-  
 
 ```js
   // arrow fonction
  show(2, 3) ; // { power2 : 4, power3 : 27 }
-
  ```
+
+### La fonction JS map <a class="anchor" id="section81"></a>
+
+Vous pouvez utiliser une fonction fléchée sur des collections en utilisant des fonctions comme map, filter ou reduce par exemple :
+
+- map retourne un tableau de même dimension que le tableau parcouru.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const powerNumber = numbers.map( number => number ** 2);
+```
 
 #### Exercice puissance 3 <a class="anchor" id="section8101"></a>
 
-Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
+Créez une fonction flèchée pour répondre aux questions suivantes. Vous pouvez utiliser la fonction map vu en cours.
+
+1. Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
 
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -881,8 +892,61 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 2**3 // 8
 ```
 
-Mettre maintenant à la puissance 3 les nombres pairs uniquement
+2. Ordonnez la liste des nombres par ordre croissant puis par ordre décroissant
 
+3. Trouvez une astuce pour rendre plus dynamique l'ordre des nombres à l'aide de la fonction.
+
+
+### Quelques fonctions JS utiles pour le traitement des données  <a class="anchor" id="chapter8"></a>
+
+- filter, il permet de filtrer des données dans un tableau en fonction d'un critère.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+numbers.filter(number => number > 4);
+// [5, 6, 7, 8, 9, 10]
+```
+
+- reduce, applique une fonction qui est un accumulateur et qui traite chaque valeur d'une liste de la gauche vers la droite afin de la réduire en une seule valeur. Vous pouvez passer en deuxième paramètre une valeur facultative.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// première paramètre fonction fléchée, deuxième paramètre val init de acc
+const total = numbers.reduce((acc, curr) => curr + acc, 0);
+console.log(total); // affiche 55
+
+numbers.reduce((acc, curr) => curr + acc, 100);
+// 155
+```
+
+#### Exercice max <a class="anchor" id="section8102"></a>
+
+Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
+
+#### Exercice reduce sum impair <a class="anchor" id="section8103"></a>
+
+Faites la somme des nombres impairs en utilisant la fonction reduce des valeurs suivantes :
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+```
+
+#### Exercice fonction map sur un littéral <a class="anchor" id="section8104"></a>
+
+Utilisez la fonction map pour calculer le prix TTC des téléphones. Utilisez une fonction fléchée.
+
+```js
+const phones = [
+  { name: "iphone XX", priceHT: 900 },
+  { name: "iphone X", priceHT: 700 },
+  { name: "iphone B", priceHT: 200 },
+];
+```
+
+
+
+### Exemple notion avancée
 
 Contrairement aux fonctions classiques, les fonctions fléchées ne re-définissent pas de this. Si vous vous référez dans une fonction fléchée au mot clé this, la fonction fléchée **récupérera le this du contexte** dans lequel elle a été définie.
 
@@ -1051,66 +1115,6 @@ Créez un nouveau prototype average dans la fonction constructeur User, qui calc
 Quand JS appelle cette méthode il ne la trouvera pas dans l'instance de User mais dans son prototype. Cette technique permet donc de créer des méthodes partagées par toutes les instances. Notez que vous pouvez tout à fait définir la méthode fullName après avoir fait son instance.
 
 JS possède depuis **ES6** un mot clé class pour définir une classe, nous verrons qu'en fait ce mot clé permet de définir, comme dans l'exemple précédent, un constructeur.
-
-## Quelques fonctions JS utiles pour le traitement des données  <a class="anchor" id="chapter8"></a>
-
-### La fonction JS map <a class="anchor" id="section81"></a>
-
-Vous pouvez utiliser une fonction fléchée sur des collections en utilisant des fonctions comme map, filter ou reduce par exemple :
-
-- map retourne un tableau de même dimension que le tableau parcouru.
-
-```js
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const powerNumber = numbers.map( number => number ** 2);
-```
-
-
-
-- filter, il permet de filtrer des données dans un tableau en fonction d'un critère.
-
-```js
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-numbers.filter(number => number > 4);
-// [5, 6, 7, 8, 9, 10]
-```
-
-- reduce, applique une fonction qui est un accumulateur et qui traite chaque valeur d'une liste de la gauche vers la droite afin de la réduire en une seule valeur. Vous pouvez passer en deuxième paramètre une valeur facultative.
-
-```js
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// première paramètre fonction fléchée, deuxième paramètre val init de acc
-const total = numbers.reduce((acc, curr) => curr + acc, 0);
-console.log(total); // affiche 55
-
-numbers.reduce((acc, curr) => curr + acc, 100);
-// 155
-```
-
-#### Exercice max <a class="anchor" id="section8102"></a>
-
-Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
-
-#### Exercice reduce sum impair <a class="anchor" id="section8103"></a>
-
-Faites la somme des nombres impairs en utilisant la fonction reduce des valeurs suivantes :
-
-```js
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-```
-
-#### Exercice fonction map sur un littéral <a class="anchor" id="section8104"></a>
-
-Utilisez la fonction map pour calculer le prix TTC des téléphones. Utilisez une fonction fléchée.
-
-```js
-const phones = [
-  { name: "iphone XX", priceHT: 900 },
-  { name: "iphone X", priceHT: 700 },
-  { name: "iphone B", priceHT: 200 },
-];
-```
 
 ## Affectation par décomposition <a class="anchor" id="chapter9"></a>
 
