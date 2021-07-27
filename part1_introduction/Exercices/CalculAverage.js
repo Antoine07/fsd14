@@ -7,14 +7,14 @@ Créez une fonction constructeur CalculAverage, elle permettra de calculer la mo
 
 Si vous le souhaitez, vous pouvez utiliser la notion de classe. Sinon faites une fonction comme on l'a vu en cours pour l'instant.
 
-Créez également une fonction dans votre classe ou fonction constructeur afin d'ordonner les étudiants en fonction de leur moyenne.
+Créez également une fonction dans votre classe ou fonction constructeur afin d'ordonner les étudiants en fonction de leur moyenne (ordre croissant).
 
  */
 
 const students = [
   { name: "Alan", notes: [11, 18, 10, 9] },
   { name: "Sophie", notes: [10, 8, 17, 10.5] },
-  { name: "Bernard", notes: [9, 10, 11, 18] },
+  { name: "Bernard", notes: [20, 20, 11, 18] },
 ];
 
 function CalculAverage(students) {
@@ -33,16 +33,16 @@ function CalculAverage(students) {
 
       // console.log(name, notes)
 
-      sum = this.sum(student.notes); // on utilise une fonction définie dans la fonction constructeur 
+      sum = this.sum(student.notes); // on utilise une fonction définie dans la fonction constructeur
       nb = student.notes.length;
 
-      if(nb !== 0)
+      if (nb !== 0)
         average = Math.floor((sum / nb) * this.precision) / this.precision;
 
       this.results.push({ name, notes, average });
     }
 
-    return this.results;
+    // return this.results;
   };
 
   this.sum = function (notes) {
@@ -53,12 +53,19 @@ function CalculAverage(students) {
 
     return sum;
   };
+
+  this.sort = function () {
+    this.results.sort(function (s1, s2) {
+      return s1.average - s2.average;
+    });
+  };
 }
 
 // création d'une instance de la fonction constructeur
 const calculate = new CalculAverage(students);
 calculate.precision = 10;
 
-console.table( calculate.average() );
+calculate.average();
+calculate.sort();
 
-console.table(students);
+console.table(calculate.results);
