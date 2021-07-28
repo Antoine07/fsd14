@@ -66,4 +66,4 @@ const relations = [
 ]
 ```
 
-5. Faites une copie profonde de l'objet suivant :
+5. Faites une copie profonde de l'objet populations.
