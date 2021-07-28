@@ -949,7 +949,7 @@ const phones = [
 Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
 
 
-### Exemple notion avancée
+### Context this dans un objet & fonction fléchée
 
 Contrairement aux fonctions classiques, les fonctions fléchées ne re-définissent pas de this. Si vous vous référez dans une fonction fléchée au mot clé this, la fonction fléchée **récupérera le this du contexte** dans lequel elle a été définie.
 
@@ -1041,21 +1041,6 @@ const Model = {
 Model.subModel(); // this objet Model
 ```
 
-### Exercice de synthèse corrigé un effet de bord <a class="anchor" id="section79"></a>
-
-Comment éviter l'effet de bord sur la propriété this (undefined) dans le code suivant? Proposez une solution.
-
-```js
-const log = {
-    count : 100,
-    save: function () {
-        'use strict';
-        console.log(this.count);
-    }
-}
-setTimeout(log.save, 500);
-```
-
 ### Introduction à la notion de prototype pour une fonction  <a class="anchor" id="section7100"></a>
 
 ```js
@@ -1118,6 +1103,14 @@ Créez un nouveau prototype average dans la fonction constructeur User, qui calc
 Quand JS appelle cette méthode il ne la trouvera pas dans l'instance de User mais dans son prototype. Cette technique permet donc de créer des méthodes partagées par toutes les instances. Notez que vous pouvez tout à fait définir la méthode fullName après avoir fait son instance.
 
 JS possède depuis **ES6** un mot clé class pour définir une classe, nous verrons qu'en fait ce mot clé permet de définir, comme dans l'exemple précédent, un constructeur.
+
+### Exercice protoptype
+
+Soit le tableau de nombres numbers suivant. Ajoutez une méthode average sur l'objet Array afin que tous les tableaux de votre script possèdent cette fonctionnalité. Vérifiez celle-ci sur le tableau numbers.
+
+```js
+const numbers = [11, 18, 19, 20, 14];
+```
 
 ## Affectation par décomposition <a class="anchor" id="chapter9"></a>
 
@@ -1314,9 +1307,22 @@ const newState = { ...state, email: "sophie@sophie.fr" };
 Soient les données suivantes. Créez un tableau strNumbers et pushez-y chacune de ses valeurs.
 
 ```js
-const strNumbers = [];
 const str1 = ["one", "two"];
 const str2 = ["three", "four"];
+```
+
+### Correction
+
+```js
+const strNumbers = [...str1, ...str2 ];
+console.table(strNumbers);
+
+// en répondant à la question posée on peut utiliser la méthode push 
+const strNumbersBis = [];
+
+strNumbersBis.push( ...str1 , ...str2 );
+console.table(strNumbersBis);
+
 ```
 
 ### Nom de propriété calculé et décomposition <a class="anchor" id="section102"></a>
@@ -1325,11 +1331,12 @@ Vous pouvez utiliser une variable pour définir une clé d'un littéral. Dans la
 
 ```js
 const state = {
-  name: "",
+  username: "",
   email: "alan@alan.fr",
 };
 
 // définition d'une clé dynamique
+// sans les crochets JS crée une clé qui portera le nom de la variable et pas sa valeur
 let name = "email";
 const newState = { ...state, [name]: "bernard@bernard.fr" };
 ```
@@ -1346,11 +1353,14 @@ Utilisez la fonction sort de JS.
 const students = [ "Alan", "Philippe", "Tony", "Geraldine", "Michelle", "Phi" ];
 ```
 
-3. Ordonnez la liste des nombres suivants par ordre croissant :
+3. Soit la chaîne de caractères suivantes, en utilisant le spread operator et la méthode reverse inverser son ordre totalement (la mettre à l'envers ). 
 
 ```js
-const numbers = [ 10, 7, 5, 1, 10, 5];
+
+const message = "bonjour tout le monde";
+
 ```
+
 
 ## Exercice populations
 
