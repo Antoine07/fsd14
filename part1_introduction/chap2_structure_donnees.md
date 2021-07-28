@@ -24,32 +24,6 @@ console.log(newFruits.length === fruits.length)
 
 2. Ecrivez un script pour créer un nouveau tableau newFruits qui n'a pas la même référence que le tableau fruits.
 
-
-## Exercice populations
-
-- 1. Parcourez le tableau populations et ajoutez un champ count qui compte le nombre d'occurence(s) de a et l dans les noms. Utilisez un for of.
-
-```js
-
-const populations = [
-    { "id": 0, "name": "Alan" },
-    { "id": 1, "name": "Albert" },
-    { "id": 2, "name": "Jhon" },
-    { "id": 3, "name": "Brice" },
-    { "id": 4, "name": "Alexendra" },
-    { "id": 5, "name": "Brad" },
-    { "id": 6, "name": "Carl" },
-    { "id": 7, "name": "Dallas" },
-    { "id": 8, "name": "Dennis" },
-    { "id": 9, "name": "Edgar" },
-    { "id": 10, "name": "Erika" },
-    { "id": 11, "name": "Isaac" },
-    { "id": 12, "name": "Ian" }
-];
-```
-
-- 2. Ordonnez maintenant le tableau par ordre croissant de nombre de a et l dans les noms.
-
 ## Fonction map
 
 La méthode map permet de parcourir un tableau et d'exécuter une fonction pour chaqu'un de ses éléments. Elle retournera un nouveau tableau.
@@ -82,11 +56,9 @@ const d = Math.floor( Math.square( (X[0] - B[0] )**2 + (X[1] - B[1] )**2 ) * 100
 
 ### Exercice string
 
-1. Inversez la chaîne de caractères sentence ci-après.
+1. Comptez le nombre de caractères de chaque mot.
 
-2. Comptez le nombre de caractères de chaque mot.
-
-3. Faites un script qui prend en argument une phrase et qui retourne dans un tableau le nombre de caractères de chaque mot. Vous ne compterez pas les espaces comme un caractère.
+2. Faites un script qui prend en argument une phrase et qui retourne dans un tableau le nombre de caractères de chaque mot. Vous ne compterez pas les espaces comme un caractère.
 
 Indication : utilisez la méthode split pour transformer la chaîne de caractères en tableau.
 
