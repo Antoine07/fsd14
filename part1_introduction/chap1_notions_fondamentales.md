@@ -1341,7 +1341,7 @@ let name = "email";
 const newState = { ...state, [name]: "bernard@bernard.fr" };
 ```
 
-## Exercice ordre et longueur de mots
+## Exercice ordre et longueur de mots & retournement de chaîne de caractères
 
 Utilisez la fonction sort de JS.
 
