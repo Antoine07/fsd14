@@ -51,7 +51,7 @@ Rappelons comment on effectue le calcul de la distance avec une précision de de
 const X = [1,2];
 const B = [4,1.5];
 
-const d = Math.floor( Math.square( (X[0] - B[0] )**2 + (X[1] - B[1] )**2 ) * 100) / 100 ;
+const d = Math.floor( Math.sqrt( (X[0] - B[0] )**2 + (X[1] - B[1] )**2 ) * 100) / 100 ;
 ```
 
 ### Exercice string
@@ -60,7 +60,7 @@ const d = Math.floor( Math.square( (X[0] - B[0] )**2 + (X[1] - B[1] )**2 ) * 100
 
 2. Faites un script qui prend en argument une phrase et qui retourne dans un tableau le nombre de caractères de chaque mot. Vous ne compterez pas les espaces comme un caractère.
 
-Indication : utilisez la méthode split pour transformer la chaîne de caractères en tableau.
+Indication : vous pouvez utiliser la méthode split pour transformer la chaîne de caractères en tableau.
 
 ```js
 const sentence = "Bonjour tout le monde, vous aimez JS ?";
