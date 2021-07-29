@@ -161,6 +161,34 @@ Est ce que vous pouvez définir ou re-définir une propriété dans la classe fi
 
 Justifiez votre réponse si possible.
 
+## Correction
+
+**Impossible JS lancera une erreur si vous définissez les propriétés avant l'appel de super.**. 
+
+La raison est technique au niveau de l'implémentation des classes en JS.
+
+
+```js
+class Rectangle {
+    constructor(w, h) {
+        this._w = w;
+        this._h = h;
+    }
+   
+}
+
+class Square extends Rectangle {
+
+    constructor(w) {
+        // this.foo = 1;  // attention impossible dans l'héritage en JS
+        super(w, w);
+    }
+}
+
+const square = new Square(10);
+
+```
+
 ## Exercice Square Rectangle
 
 Créez une classe Square et Rectangle. Laquelle des deux classes hérite de l'autre ? Répondez à la question avant de les implémenter ?
