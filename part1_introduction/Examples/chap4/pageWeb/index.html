@@ -31,17 +31,27 @@
         <li>B=<span>2</span></li>
         <li>C=<span>3</span></li>
     </ul>
+    <div id="root"></div>
     <script>
-        let els = document.querySelectorAll('.numbers > li');
-        /*
-            els[0].querySelector('span').innerHTML = 3;
-            els[1].querySelector('span').innerHTML = 1;
-            els[2].querySelector('span').innerHTML = 2;
-        */
-        // ceci est une boucle JS sur les indices d'un tableau 
-        for (let i = 0; i < els.length; i++) {
-            let span = els[i].querySelector('span').innerHTML = els.length - i ;
+        const els = document.querySelectorAll('.numbers > li');
+        const root = document.querySelector('#root');
+        const timer = 5 * 1000;
+
+        const render = (els) => {
+            for (let i = 0; i < els.length; i++) {
+                let span = els[i].querySelector('span').innerHTML = els.length - i;
+            }
         }
+
+        const show = (els, callback) => {
+            setTimeout(() => {
+                callback(els); // Task Queue
+            }, timer);
+        }
+
+        show(els, render);
+        root.innerHTML = "<h1>Test asynchrone function</h1>";
+        
     </script>
 </body>
 
