@@ -20,9 +20,14 @@ const populations = [
 
 1. Ordonnez les données populations par ordre croissant de longueur de nom.
 
-2. Ajoutez une clé **lenName** aux éléments du tableau populations afin d'assignerer la longueur de chaque nom à cette variable.
+2. Ajoutez une clé **lenName** aux éléments du tableau populations afin d'assigner la longueur de chaque nom.
 
-3. (++) Regroupez maintenant dans un nouveau tableau groupNames les noms de même longueur.
+```js
+populations[0].lenName = 1; 
+/*on directement modifier le littéral en lui ajoutant une clé. Ici le premier littéral du tableau aura une clé/valeur comme suit : lenName = 1.*/
+```
+
+3. (++) Regroupez maintenant dans un nouveau tableau **groupNames** les noms de même longueur.
 
 Vous pouvez présenter les résultats recherchés comme suit :
 
