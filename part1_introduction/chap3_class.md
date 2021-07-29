@@ -155,6 +155,12 @@ lion.name = "Shere Khan";
 console.log(lion.speak())
 ```
 
+## Exercice class & super
+
+Est ce que vous pouvez définir ou re-définir une propriété dans la classe fille dans le constructeur avant l'appel de super la méthode de JS permettant l'initialisation des propriétés de la classe mère ?
+
+Justifiez votre réponse si possible.
+
 ## Exercice Square Rectangle
 
 Créez une classe Square et Rectangle. Laquelle des deux classes hérite de l'autre ? Répondez à la question avant de les implémenter ?
